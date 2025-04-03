@@ -1,0 +1,58 @@
+<!--Lessson 6 Booleans and if Statements: Rock Paper Scissors-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Rock, Paper, Scissors
+    </title>
+    <style>
+      button{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      Play a game of rock paper scissors against the computer
+    </h3>
+    <button title="Click to select Rock" onclick="
+    computerMove = generateComputerMove();    
+    if(computerMove === 'Rock') result = 'Tie';
+    else if(computerMove === 'Paper') result = 'You lose';
+    else result =  'You win';
+    alert(`You Choose: Rock \nComputer chooose: ${computerMove} \nResult: ${result}`);">
+      Rock
+    </button>
+
+    <button title="Click to select Paper" onclick="
+    computerMove = generateComputerMove();    
+    if(computerMove === 'Paper') result = 'Tie';
+    else if(computerMove === 'Scissors') result = 'You lose';
+    else result =  'You win';
+    alert(`You Choose: Paper \nComputer chooose: ${computerMove} \nResult: ${result}`);">
+      Paper
+    </button>
+
+    <button title="Click to select Scissors" onclick="
+    computerMove = generateComputerMove();    
+    if(computerMove === 'Scissors') result = 'Tie';
+    else if(computerMove === 'Rock') result = 'You lose';
+    else result =  'You win';
+    alert(`You Choose: Scissors \nComputer chooose: ${computerMove} \nResult: ${result}`);">
+      Scissors
+    </button>
+    
+    <script>
+      let result = ''
+      function generateComputerMove(){
+        const randomNumber = Math.round(Math.random() *3);
+        if(randomNumber === 1 ) return 'Rock';
+        else if(randomNumber === 2 ) return 'Paper';
+        else return 'Scissors';
+      }
+      
+      
+
+    </script>
+  </body>
+</html>

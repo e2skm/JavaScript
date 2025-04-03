@@ -1,0 +1,59 @@
+<!-- Heads or Tails Game -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Heads or Tails
+    </title>
+    <style>
+      body{
+        font-family: Arial;
+      }
+      button{
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+        border: 1px solid gold;
+      }
+      .tails-button{
+        background-color: red;
+        color: green;
+      }
+      .heads-button{
+        background-color: green;
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h3>
+      A coin  is tossed game guess whether it will land on heads or tails
+    </h3>
+    <button class="heads-button" title="Click to select Heads"
+    onclick="
+    coin = tossCoin();
+    result = coin === 'Heads' ?'Congrats, you won!' : 'Opps, you lost!';
+    alert(`You guessed: Heads \nThe coin lended on: ${coin} \nResult: ${result}`);
+    ">
+      Heads
+    </button>
+    <button class="tails-button" title="Click to select Tails"
+    onclick="
+    coin = tossCoin();
+    result = coin === 'Tails' ?'Congrats, you won!' : 'Opps, you lost!';
+    alert(`You guessed: Tails \nThe coin lended on: ${coin} \nResult: ${result}`);
+    ">
+      Tails
+    </button>
+    
+    <script>
+      /* Heads or Tails */
+      function tossCoin(){
+        return  Math.random() > 0.5 ? 'Heads' :'Tails';
+      }
+
+    </script>
+  </body>
+</html>
