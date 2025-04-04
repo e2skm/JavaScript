@@ -1,0 +1,96 @@
+<!-- Lesson 6 Booleans :-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Booleans, if statements, logical operators, truthy and falsy values and shortcuts for if Statements 
+    </title>
+
+  </head>
+  <body>
+    
+    <script>
+
+      /*Boolean Values*/
+      true
+      false
+
+      /* Comparison Operators */
+      console.log(3 > 5); 
+      console.log(4 === 4.5);
+      console.log(5 !== '5.00');
+      
+      /* if statements */
+      if(false){
+        console.log('Hello');
+      }else{
+        console.log('Goodbye')
+      }
+
+      const age = 15;
+
+      if(age >= 16){
+        console.log('You can drive');
+        console.log('Congrats!!');
+      }else if(age >=14){
+        console.log('Almost there!'); 
+      }
+      else{
+        console.log('You can not drive');
+      }
+
+      /* Logical Operators */
+      console.log(true && true);
+      console.log(true && false);
+
+      console.log(true || true);
+      console.log(true || false);
+      console.log(false || false);
+
+      console.log(!true);
+      console.log(!false);
+      
+      /* truthy and falsy values */
+      if(0){
+        console.log('Truthy');
+      }else{
+        console.log('Falsy'); 
+      }
+
+      const cartQuantity = 5;
+
+      if(cartQuantity){
+        console.log('cart has products');
+      }else{
+        console.log('cart is empty');
+      }
+
+      console.log(!0);
+
+      console.log('text' / 5);
+
+      let variable1;
+      console.log(variable1)
+
+      const variable2 = undefined;
+      console.log(variable2);
+      
+      /*Shortcuts for if statements
+      1 Ternary Operator ?: 
+      2 Guard Operator &&
+      3 Default Operator ||*/
+      const result = variable2 ? 'truthy' : 'falsy';/*shortcut for if else statement another advantage of this is it can be saved in a variable*/
+      console.log(result);
+      
+      const message = 4 && 'hello world';/* shortcut for an if statment, in this case the and operator funtions as a guard for the code after it. this can also be saved in a variable */
+      console.log(message);
+
+      const currency = 'EUR' || 'USD';
+      console.log(currency)
+      const currency2 = variable1 || 'USD';/* The value after the or operator functions as a default. If the value before the operator is falsy the default is true. Basically in this case we use the or operator to set a default value*/
+      console.log(currency2)
+
+
+    </script>
+  </body>
+</html>

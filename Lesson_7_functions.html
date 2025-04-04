@@ -1,0 +1,57 @@
+<!--Lesson 7 functions-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Functions
+    </title>
+
+  </head>
+  <body>
+    
+    <script>
+      function function1(){
+        console.log('hello');
+        console.log(2 +2);
+      }
+      function1();
+      
+      function calcuateTax(cost,taxPercent = 0.1){
+        return cost * taxPercent;
+      }
+      console.log(calcuateTax(2000,0.14));
+      console.log(calcuateTax(5000));
+
+      function greet(name = 'My friend', currentHour = new Date().getHours()){
+        let timeOfDay = '';
+
+        if(currentHour >= 12 && currentHour <= 6) timeOfDay = 'Morning';
+        else if (currentHour >= 13 && currentHour <= 18) timeOfDay = 'Afternoon';
+        else timeOfDay = 'Night';
+
+        console.log(`Good ${timeOfDay} ${name}, \nHow are you?`);
+      }
+      greet('Lebogang', 8);
+      greet('Itumeleng');
+      greet('Salome', 21);
+      greet();
+
+      function convertToFahrenheit(celsius){
+        return (celsius * 9 / 5) + 32;
+      }
+      console.log(convertToFahrenheit(25));
+
+      function convertToCelsius(fahrenheit){
+        return (fahrenheit - 32) * 5 / 9;
+      }
+      console.log(convertToCelsius(86));
+
+      function convertTemperature(degrees, unit = 'C'){
+        return unit === 'C' ? convertToFahrenheit(degrees):  convertToCelsius(degrees);
+      }
+      console.log(convertTemperature(30,'C'));
+      console.log(convertTemperature(77,'F'));
+
+    </script>
+  </body>
+</html>

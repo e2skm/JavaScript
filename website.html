@@ -1,0 +1,63 @@
+<!-- Lesson 4: In this lesson I learned about the html structure and how to integrate css and javascript code in one html file -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Pomhub 
+        </title>
+        <style>
+          /*CSS Comment*/
+          body{
+            font-family: Arial;
+          }
+          button{
+            cursor: pointer;  
+            border: 2px solid black;          
+          }
+          .add-button {
+              background-color: yellow;
+          }
+          .buy-button {
+              background-color: orange;
+          }
+          .login-button {
+            background-color: yellow;
+            color: black;
+            border-radius: 4px;
+            border: none;
+          }
+          .registration-button {
+            background-color: black;
+            color: yellow;
+            border-radius: 4px; 
+          }
+        </style>
+    </head> 
+    <body>
+      <!-- HTML comment -->
+       <h3>
+        Adults Plain Cotton T-shirt
+       </h3>
+       <p>
+        Price: $7.99
+       </p>
+      <button  title="Click to add item to your cart" class="add-button" onclick="alert('Item Added');">
+        Add to cart
+      </button>
+      <button title="Click to purchase items in your cart" class="buy-button" onclick="console.log('Loading...'); alert('Item Purchased');">
+        Buy now
+      </button>
+      
+      <script>
+        // This code creates a popup
+        // alert('Welcome'); 
+        /*
+        This is a multiline comment
+        */    
+        console.log(2+2); 
+        console.log('Mr' + ' ' + 'Sekoma');   
+      </script>
+      <!-- 5H 25M 26S-->
+
+    </body>
+</html>
