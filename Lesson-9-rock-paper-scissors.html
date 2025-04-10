@@ -1,0 +1,113 @@
+<!--Lessson 9 DOM: Rock Paper Scissors-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Rock, Paper, Scissors
+    </title>
+    <style>
+      button{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      Play a game of rock paper scissors against the computer
+    </h3>
+    <button title="Click to select Rock" onclick="
+    playGame('Rock');">
+      Rock
+    </button>
+
+    <button title="Click to select Paper" onclick="
+    playGame('Paper');">
+      Paper
+    </button>
+
+    <button title="Click to select Scissors" onclick="
+    playGame('Scissors');">
+      Scissors
+    </button>
+
+    <p class="js-result">
+
+    </p>
+    <p class="js-moves">
+
+    </p>
+    <p class="js-score">
+
+    </p>
+
+    <button title="Click to reset score" onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0; 
+    localStorage.removeItem('score');
+    updateScoreElement();">
+      Reset Score
+    </button>
+    
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+
+      updateScoreElement();
+
+      // Function to generate a random move
+      function generateComputerMove(){
+        const randomNumber = Math.round(Math.random() *3);
+        if(randomNumber === 1 ) return 'Rock';
+        else if(randomNumber === 2 ) return 'Paper';
+        else return 'Scissors';
+      }
+
+      //Function to display updated score
+      function updateScoreElement(){
+        document.querySelector('.js-score')
+         .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      }
+
+      // Main game function
+      function playGame(playerMove){
+        const computerMove = generateComputerMove();
+        let result = ''; 
+        
+        // Determine game result
+        if(playerMove === 'Rock'){
+          if(computerMove === 'Rock') result = 'Tie';
+          else if(computerMove === 'Paper') result = 'You lose';
+          else result =  'You win';
+        }else if(playerMove === 'Paper'){
+          if(computerMove === 'Paper') result = 'Tie';
+          else if(computerMove === 'Scissors') result = 'You lose';
+          else result =  'You win';
+        }else {
+          if(computerMove === 'Scissors') result = 'Tie';
+          else if(computerMove === 'Rock') result = 'You lose';
+          else result =  'You win';
+        }
+
+        // Update score
+        if(result === 'You win') score.wins ++;
+        else if(result === 'You lose') score.losses ++;
+        else score.ties ++;
+
+        // Store updated score in localStorage
+        localStorage.setItem('score',JSON.stringify(score));
+
+        // Display Info: Results, Moves and Score
+        updateScoreElement();
+        document.querySelector('.js-result')
+         .innerHTML = `${result}`;
+        document.querySelector('.js-moves')
+          .innerHTML = `You chose: ${playerMove}, Computer chose: ${computerMove}`; 
+
+      }
+    </script>
+  </body>
+</html>
