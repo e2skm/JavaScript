@@ -1,0 +1,179 @@
+<!--Forms: Handling user input-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Internship Application Form
+    </title>
+    <style>
+      body{
+        font-family: Calibri;
+      }
+      form{
+        width: 500px;
+        background-color: gold;
+        border: 3px solid black;
+        border-radius: 16px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+      }
+      label{
+        margin: 5px;
+        font-weight: 700;
+      }
+      button{
+        padding: 5px;
+        border: 1px solid goldenrod;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #submit-button{
+        background-color: green;
+        margin-right: 10px;
+      }
+      #reset-button{
+        background-color: red;
+        margin-left: 10px;
+      }
+      #required{
+        color: red;
+      }
+      input, select{
+        width: 200px;
+      }
+      #gender-options, #disability-options{
+        display: flex;
+        justify-content: space-between;
+      }
+      #male, #female, #yes, #no, #maybe{
+        width: 15px;
+      }
+      #button-container{
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Information and Communication Technology Internship 
+    </h1>
+    <form action="#" method="post">
+      <h3>Biographical Information</h3>
+      <label for="name">Name <span id="required">*</span></label>
+      <input type="text" id="name" name="name" required><br/>
+      <label for="surname">Surname <span id="required">*</span></label>
+      <input type="text" id="surname" name="surname" required><br/>
+      <label for="age">Age <span id="required">*</span></label>
+      <input type="number" id="age" name="age" required><br/>
+      <label for="race">Race <span id="required">*</span></label>
+      <select name="race" id="race" required>
+        <option value="select">--select--</option>
+        <option value="african">African</option>
+        <option value="asian">Asian</option>
+        <option value="coloured">Coloured</option>
+        <option value="indian">Indian</option>
+        <option value="white">white</option>
+      </select><br/>
+      <label for="DOB">Date of Birth <span id="required">*</span></label>
+      <input type="date" id="DOB" name="DOB" required><br/>
+      
+     <div id="gender-options">
+      <label for="gender">Gender</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+     </div>
+
+     <div id="disability-options">
+      <label for="disability">Do you have a disability &#63</label>
+      <input type="radio" id="yes" name="yes" value="yes">
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="no" value="no">
+      <label for="no">No</label>
+      <input type="radio" id="maybe" name="maybe" value="maybe">
+      <label for="maybe">Prefer not to say</label>
+     </div>
+      
+      
+      <label for="motivation">Write a 250 to 300 word motivational letter.<span id="required">*</span></label>
+      <textarea id="motivation" name="motivation" cols="60" rows="20" placeholder="Explaning why you should be considered for this internship " required></textarea>
+      
+
+      <h3>Contact Information</h3>
+      <label for="streetAddress">Street Address <span id="required">*</span></label>
+      <input type="text" id="streetAddress" name="streetAddress" required><br/>
+      <label for="suburb">Suburb</label>
+      <input type="text" id="suburb" name="suburb" required><br/>
+      <label for="city">City <span id="required">*</span></label>
+      <input type="text" id="city" name="city" required><br/>
+      <label for="province">Province <span id="required">*</span></label>
+      <select name="province" id="province" required>
+        <option value="select">--select--</option>
+        <option value="easternCape">Eastern Cape</option>
+        <option value="freeState">Free State</option>
+        <option value="gauteng">Gauteng</option>
+        <option value="limpopo">Limpopo</option>
+        <option value="mpumalanga">Mpumalanga</option>
+        <option value="northWest">North West</option>
+        <option value="northernCape">Northern Cape</option>
+        <option value="westernCape">western Cape</option>
+        <option value="kwaZuluNatal">Kwa Zulu Natal</option>
+      </select><br/>
+      <label for="zip">Zip Code <span id="required">*</span></label>
+      <input type="text" id="zip" name="zip" required><br/>
+      <label for="email">Email Address <span id="required">*</span></label>
+      <input type="text" id="email" name="email" required><br/>
+      <label for="phone">Phone Number <span id="required">*</span></label>
+      <input type="text" id="phone" name="phone" required><br/>
+      <label for="phone1">Alternative Phone Number </label>
+      <input type="text" id="phone1" name="phone1"><br/>
+
+      <h3>Highest Qualification Obtained</h3>
+      <label for="institution">Institution<span id="required">*</span></label>
+      <input type="text" id="institution" name="institution" required><br/>
+      <label for="qualification">Qualification<span id="required">*</span></label>
+      <select name="qualification" id="qualification" required>
+        <option value="select">--select--</option>
+        <option value="ai">Artifical Intelligence</option>
+        <option value="cs">Computer Science</option>
+        <option value="cse">Computer Systems Engineering</option>
+        <option value="ds">Data Science</option>
+        <option value="it">Information Technology</option>
+        <option value="is">Information Systems / Informatics</option>
+        <option value="multimedia">Multimedia</option>
+      </select><br/>
+      <label for="nqf">NQF Level <span id="required">*</span></label>
+      <select name="nqf" id="nqf" required>
+        <option value="select">--select--</option>
+        <option value="5">NQF 5</option>
+        <option value="6">NQF 6</option>
+        <option value="7">NQF 7</option>
+        <option value="8">NQF 8</option>
+        <option value="9">NQF 9</option>
+        <option value="10">NQF 10</option>
+      </select><br/>
+      <label for="year">Year Obtained<span id="required">*</span></label>
+      <input type="number" id="year" name="year" min="2000" max="2024" required><br/>
+
+      <h3>Supporting Documents</h3>
+      <label for="cv" >Upload Curriculum Vitae <span id="required">*</span></label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.docx" required><br/>
+      <label for="id">Upload ID <span id="required">*</span></label>
+      <input type="file" id="id" name="id" accept=".pdf,.docx,.jpg" required><br/>
+      <label for="matric">Upload Matric Certificate <span id="required">*</span></label>
+      <input type="file" id="matric" name="matric" accept=".pdf,.jpg" required><br/>
+      <label for="qualification">Upload Qualification <span id="required">*</span></label>
+      <input type="file" id="qualification" name="qualification" accept=".pdf,.jpg" required><br/>
+      <label for="license">Upload Driver's License</label>
+      <input type="file" id="license" name="license" accept=".pdf,.jpg"><br/>
+
+      <div id="button-container">
+        <button type="submit" id="submit-button">Submit</button>
+        <button type="reset" id="reset-button">Reset</button>
+      </div>
+    </form>
+  </body>
+</html>

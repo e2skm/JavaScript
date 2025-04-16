@@ -1,0 +1,57 @@
+<!--Audio: with my own controls-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      My Music Player: Labrinth–Forever
+    </title>
+    <style>
+      #play-button, #pause-button, #stop-button{
+        font-family: Calibri;
+        color: white;
+        padding: 6px;
+        border: 1px solid white;
+        border-radius: 4px;
+      }
+      #play-button{
+        background-color: green;
+      }
+      #pause-button{
+        background-color: yellow;
+      }
+      #stop-button{
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Insert path to audio in -->
+    <audio id="audio" src="resources/Labrinth_–_Forever_(Official_Audio)_-_euphoria_(Original_Score_from_the_HBO_Series)(128k).mp3" >
+
+    </audio>
+    <button id="play-button">Play</button>
+    <button id="pause-button">Pause</button>
+    <button id="stop-button">Stop</button>
+
+    <script>
+      let player;
+      onload = function(){
+        player = document.getElementById("audio");
+        document.getElementById("play-button").addEventListener("click",playMusic, false);
+        document.getElementById("pause-button").addEventListener("click",pauseMusic, false);
+        document.getElementById("stop-button").addEventListener("click",stopMusic, false);
+      }
+      function playMusic(){
+        player.play();
+      }
+      function pauseMusic(){
+        player.pause();
+      }
+      function stopMusic(){
+        player.pause();
+        player.currentTime = 0;
+      }
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!--Tables-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Tables
+    </title>
+    <style>
+      #container{
+        display: flex;
+        justify-content: space-around;
+      }
+      .stats-pic{
+        width: 485px;
+      }
+      table{
+        font-family: Arial;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        border-collapse: collapse;
+      }
+      th{
+        width: 150px;
+      }
+      .percentage-accuracy{
+        background-color: grey;
+        border-collapse: collapse;
+      }
+      #sho{
+        color: red;
+      }
+      th, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="container">
+      <div class="pic-div">
+        <img class="stats-pic" src="resources/Screenshot (436).png">
+      </div>
+
+      <div>
+        <table>
+          <tr>
+            <th>SPENCE</th>
+            <th colspan="3"><span id="sho">SHO</span>STATS</th>
+            <th>CRAWFORD</th>
+          </tr>
+          <tr>
+            <td>33 of 296</td>
+            <td class="percentage-accuracy">11%</td>
+            <td>JABS</td>
+            <td class="percentage-accuracy">42%</td>
+            <td>87 of 206</td>
+          </tr>
+          <tr>
+            <td>63 of 184</td>
+            <td class="percentage-accuracy">34%</td>
+            <td>POWER</td>
+            <td class="percentage-accuracy">60%</td>
+            <td>98 of 163</td>
+          </tr>
+          <tr>
+            <td>96 of 480</td>
+            <td class="percentage-accuracy">20%</td>
+            <td>TOTAL</td>
+            <td class="percentage-accuracy">50%</td>
+            <td>185 of 369</td>
+          </tr>
+          <tr>
+            <td>37</td>
+            <td colspan="3">BODY SHOTS LANDED</td>
+            <td>18</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

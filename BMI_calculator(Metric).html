@@ -1,0 +1,50 @@
+<!--BMI calculator Metric (kg/cm2)-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      BMI Calculator
+    </title>
+    <style>
+
+    </style>
+
+  </head>
+  <body>
+
+    <div>
+      <label for="weight">Enter your weight (in kilograms)</label>
+      <input type="number" id="weight" name="weight" placeholder="58"><br/>
+      <label for="height">Enter your Height (in centimeters)</label>
+      <input type="number" id="height" name="height" placeholder="160"><br/>
+      <button id="calculate-button" onclick="calculateBMI();">Calculate BMI</button>
+      <h3 id="bmi"></h3>
+      <h3 id="classification"></h3>
+    </div>
+    
+    <script>
+      function calculateBMI(){
+        const weight = document.querySelector('#weight').value;
+        const height = document.querySelector('#height').value;
+        
+        const bmi = Math.round((weight / height ** 2) * 10000); 
+        let classification = '';
+      
+
+        if (bmi < 16)classification = 'Severe Thinness';
+        else if (bmi >= 16 && bmi < 17) classification = 'Moderate Thinness';
+        else if (bmi >= 17 && bmi < 18.5) classification = 'Mild Thinness';                
+        else if (bmi >= 18.5 && bmi < 25) classification = 'Normal';
+        else if (bmi >= 25 && bmi < 30) classification =  'Over Weight';
+        else if (bmi >= 30 && bmi < 35) classification = 'Obesity (Class 1)';
+        else if (bmi >= 35 && bmi < 49) classification =  'Obesity (Class 2)';
+        else classification = 'Extreme Obesity'; 
+
+        document.querySelector('#bmi').innerHTML = `Bmi: ${bmi}`;
+        document.querySelector('#classification').innerHTML = `Classification: ${classification}`;
+        
+      }
+
+    </script>
+  </body>
+</html>
